@@ -15,7 +15,8 @@ def start():
     
     url= "https://glados.rocks/api/user/checkin"
     url2= "https://glados.rocks/api/user/status"
-    checkin = requests.post(url,data=json.dumps({'token': 'glados.one'}),headers={'cookie': cookie})
+    body={'token': 'glados.one'}
+    checkin = requests.post(url,data=json.dumps(body),headers={'cookie': cookie})
     state =  requests.get(url2,headers={'cookie': cookie})
     print(checkin.text)
     print(state.text)
