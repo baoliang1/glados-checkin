@@ -13,9 +13,11 @@ cookie = os.environ["COOKIE"]
 
 def start():
     
-    url= "https://glados.rocks/api/user/checkin"
-    url2= "https://glados.rocks/api/user/status"
-    body={'token': 'glados.one'}
+    #url= "https://glados.rocks/api/user/checkin"
+    url= "https://glados.cloud/api/user/checkin"
+    #url2= "https://glados.rocks/api/user/status"
+    url2= "https://glados.cloud/api/user/status"
+    body={'token': 'glados.cloud'}
     checkin = requests.post(url,data=json.dumps(body),headers={'cookie': cookie, 'Content-Type': 'application/json'})
     state =  requests.get(url2,headers={'cookie': cookie})
     #print(checkin.text)
